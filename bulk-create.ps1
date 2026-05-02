@@ -1,6 +1,6 @@
 Start-Transcript -Path "C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\log.txt"
 
-$users = Import-Csv "C:\Users\mani kumar\OneDrive\Desktop\IAM-Project-Level1\data\users.csv"
+$users = Import-Csv "C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\users.csv"
 
 foreach ($user in $users) {
     try {
