@@ -42,3 +42,11 @@ Successfully automated user onboarding process, reducing manual effort and ensur
 * Add role-based access control
 * Implement logging
 * Extend to full JML lifecycle
+
+## Level 2 Enhancements
+
+* Implemented input validation for user attributes
+* Added logging mechanism using PowerShell transcript
+* Introduced department-based conditional logic for access control
+* Improved error handling for reliable execution
+

@@ -1,9 +1,18 @@
+Start-Transcript -Path "C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\log.txt"
+
 $users = Import-Csv "C:\Users\mani kumar\OneDrive\Desktop\IAM-Project-Level1\data\users.csv"
 
 foreach ($user in $users) {
     try {
+        #Validation: Check reequired fields
+        if(-not $user.DisplayName -or -not $user.UserPrincipalName) {
+            Write-Host "Invalid user data"
+            continue
+        }
+       
         #checks if user already exists
         $existing = Get-MgUser -UserId $user.UserPrincipalName -ErrorAction SilentlyContinue
+        
         #creates user if doesnt exist
         if (-not $existing) {
 
@@ -20,6 +29,14 @@ foreach ($user in $users) {
             -AccountEnabled
 
             Write-Host "Created: $($user.DisplayName)" -ForegroundColor Green
+
+            #Dept-based logic
+            if($user.Department -eq "HR") {
+                Write-Host "$($user.DisplayName) assigned to HR Logic"
+            }
+            elseif ($user.Department -eq "Intern") {
+                Write-Host "$($user.DisplayName) assigned to restricted access"
+            }
         }
         else {
             Write-Host "Already exists: $($user.DisplayName)"
@@ -30,3 +47,5 @@ foreach ($user in $users) {
         Write-Host $_
     }
 }
+
+Stop-Transcript
