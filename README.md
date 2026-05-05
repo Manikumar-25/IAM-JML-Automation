@@ -1,52 +1,59 @@
-# User Lifecycle Automation (Level 1)
+# IAM JML Automation
 
 ## Overview
 
-This project demonstrates automated user provisioning in Microsoft Entra ID using PowerShell and CSV input.
+This project implements an Identity and Access Management (IAM) lifecycle system using Microsoft Graph PowerShell and Microsoft Entra ID. It automates user onboarding, access updates, and offboarding based on input data.
 
-## Objective
+## Scope
 
-To simulate a Joiner process by creating users in bulk from a structured data source.
+The system covers three lifecycle stages:
 
-## Tools Used
+* **Joiner** – creates users and assigns access
+* **Mover** – updates access when roles or departments change
+* **Leaver** – disables accounts and removes access
 
+## Design
+
+The solution is data-driven. A CSV file represents the desired user state, and the scripts reconcile it with the current state in Entra ID.
+
+```text id="arch01"
+Input (CSV) → PowerShell Scripts → Microsoft Graph → Entra ID
+```
+
+## Structure
+
+```text id="struct01"
+scripts/
+  joiner.ps1
+  mover.ps1
+  leaver.ps1
+
+data/
+  users.csv
+```
+
+## Execution
+
+1. Update `data/users.csv`
+2. Run the required script:
+
+   * `joiner.ps1`
+   * `mover.ps1`
+   * `leaver.ps1`
+3. Changes are applied to Entra ID
+
+## Key Points
+
+* Idempotent execution (safe to run multiple times)
+* Role-based access control using groups and directory roles
+* Secure offboarding through account disablement and access removal
+
+## Technologies
+
+* PowerShell
+* Microsoft Graph API
 * Microsoft Entra ID
-* Microsoft Graph PowerShell
-* Azure CLI
-* PowerShell scripting
 
-## Workflow
+## Author
 
-1. User data is stored in a CSV file
-2. PowerShell script reads the CSV
-3. Script checks if user already exists
-4. If not, user is created in Entra ID
-5. Errors are handled gracefully
-
-## Features Implemented
-
-* Bulk user creation
-* Duplicate user validation
-* Basic error handling
-
-## Sample Input
-
-CSV file containing user details (DisplayName, UserPrincipalName, Department)
-
-## Outcome
-
-Successfully automated user onboarding process, reducing manual effort and ensuring consistency.
-
-## Future Improvements
-
-* Add role-based access control
-* Implement logging
-* Extend to full JML lifecycle
-
-## Level 2 Enhancements
-
-* Implemented input validation for user attributes
-* Added logging mechanism using PowerShell transcript
-* Introduced department-based conditional logic for access control
-* Improved error handling for reliable execution
-
+Yata Mani Kumar
