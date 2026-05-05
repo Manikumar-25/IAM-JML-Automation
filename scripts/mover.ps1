@@ -1,6 +1,6 @@
-Start-Transcript -Path "C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\mover-log.txt"
+Start-Transcript -Path "C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\ogs\mover-log.txt"
 
-$users = Import-Csv "C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\users.csv"
+$users = Import-Csv "C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\data\users.csv"
 
 $roleId = "818a7221-3168-499e-9de2-7e8daed884a8"
 $hrGroupId = "6ce78fc2-20f4-4477-a63b-ea3f064bb918"

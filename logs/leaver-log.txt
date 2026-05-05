@@ -1,12 +1,12 @@
 **********************
 PowerShell transcript start
-Start time: 20260505161314
+Start time: 20260505163305
 Username: LAPTOP-FV8EV9C1\mani kumar
 RunAs User: LAPTOP-FV8EV9C1\mani kumar
 Configuration Name: 
 Machine: LAPTOP-FV8EV9C1 (Microsoft Windows NT 10.0.26200.0)
 Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.1.0_x64__8wekyb3d8bbwe\pwsh.dll
-Process ID: 1996
+Process ID: 6512
 PSVersion: 7.6.1
 PSEdition: Core
 GitCommitId: 7.6.1
@@ -17,20 +17,12 @@ PSRemotingProtocolVersion: 2.4
 SerializationVersion: 1.1.0.1
 WSManStackVersion: 3.0
 **********************
-Transcript started, output file is .\logs\leaver-log.txt
-PS>TerminatingError(Import-Csv): "Could not find a part of the path 'C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\data\users.csv'."
-Import-Csv: C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\leaver.ps1:3
-Line |
-   3 |  $users = Import-Csv ".\data\users.csv"
-     |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | Could not find a part of the path 'C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\data\users.csv'.
-Import-Csv: C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\leaver.ps1:3
-Line |
-   3 |  $users = Import-Csv ".\data\users.csv"
-     |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | Could not find a part of the path 'C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\data\users.csv'.
-
+Transcript started, output file is C:\Users\mani kumar\OneDrive\Desktop\IAM-JML-Automation\logs\leaver-log.txt
+Processing LEAVER: Employee One
+Account disabled
+Processing LEAVER: Employee Three
+Account disabled
 **********************
 PowerShell transcript end
-End time: 20260505161314
+End time: 20260505163315
 **********************
