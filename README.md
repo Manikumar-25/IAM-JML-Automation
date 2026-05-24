@@ -1,4 +1,4 @@
-# IAM JML Automation
+# Identity Lifecycle Automation
 
 ## Overview
 
